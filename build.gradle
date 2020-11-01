@@ -16,7 +16,7 @@ ext {
     versionPatch = 1
 
     // カスタムパッケージ名
-    customPackageName = 'custom'
+    customPackageName = 'aws-core'
 
     // アーティファクト関連
     group 'com.epion_t3'
@@ -45,7 +45,14 @@ configurations {
 dependencies {
 
     // Core Library
-    api group: 'com.epion_t3', name: 'epion-t3-core', version: '0.0.1'
+    api group: 'com.epion_t3', name: 'epion-t3-core', version: '0.0.2'
+
+    // AWS BOM
+    implementation platform('software.amazon.awssdk:bom:2.14.11')
+
+    // SDK core
+    api 'software.amazon.awssdk:sdk-core'
+    api 'software.amazon.awssdk:auth'
 
     // For Develop
     compileOnly 'org.projectlombok:lombok:1.18.6'
