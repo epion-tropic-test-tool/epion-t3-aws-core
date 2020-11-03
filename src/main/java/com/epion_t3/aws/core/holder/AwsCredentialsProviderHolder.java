@@ -1,3 +1,4 @@
+/* Copyright (c) 2017-2020 Nozomu Takashima. */
 package com.epion_t3.aws.core.holder;
 
 import com.epion_t3.aws.core.configuration.AwsCredentialsProviderConfiguration;
@@ -10,6 +11,9 @@ import software.amazon.awssdk.auth.credentials.DefaultCredentialsProvider;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
+/**
+ * @author Nozomu Takashima
+ */
 public final class AwsCredentialsProviderHolder {
 
     /**
@@ -42,7 +46,8 @@ public final class AwsCredentialsProviderHolder {
         if (providerMap.containsKey(configuration.getId())) {
             return providerMap.get(configuration.getId());
         } else {
-            AwsCredentialsProvider provider = AwsCredentialsProviderUtils.getInstance().resolveCredentialsProvider(configuration);
+            AwsCredentialsProvider provider = AwsCredentialsProviderUtils.getInstance()
+                    .resolveCredentialsProvider(configuration);
             providerMap.put(configuration.getId(), provider);
             return provider;
         }

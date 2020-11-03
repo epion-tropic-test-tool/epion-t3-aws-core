@@ -1,3 +1,4 @@
+/* Copyright (c) 2017-2020 Nozomu Takashima. */
 package com.epion_t3.aws.core.util;
 
 import com.epion_t3.aws.core.configuration.AwsCredentialsProviderConfiguration;
@@ -32,7 +33,8 @@ public final class AwsCredentialsProviderUtils {
      * @return
      */
     public AwsCredentialsProvider resolveCredentialsProvider(final AwsCredentialsProviderConfiguration configuration) {
-        if (StringUtils.isNotEmpty(configuration.getAccessKeyId()) && StringUtils.isNotEmpty(configuration.getSecretAccessKey())) {
+        if (StringUtils.isNotEmpty(configuration.getAccessKeyId())
+                && StringUtils.isNotEmpty(configuration.getSecretAccessKey())) {
             return SystemPropertyCredentialsProvider.create();
         } else {
             return DefaultCredentialsProvider.builder().build();
