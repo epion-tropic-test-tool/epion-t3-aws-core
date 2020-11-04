@@ -3,8 +3,11 @@ package com.epion_t3.aws.core.util;
 
 import com.epion_t3.aws.core.configuration.AwsCredentialsProviderConfiguration;
 import org.apache.commons.lang3.StringUtils;
+import software.amazon.awssdk.auth.credentials.AwsBasicCredentials;
+import software.amazon.awssdk.auth.credentials.AwsCredentials;
 import software.amazon.awssdk.auth.credentials.AwsCredentialsProvider;
 import software.amazon.awssdk.auth.credentials.DefaultCredentialsProvider;
+import software.amazon.awssdk.auth.credentials.StaticCredentialsProvider;
 import software.amazon.awssdk.auth.credentials.SystemPropertyCredentialsProvider;
 
 /**
@@ -35,7 +38,8 @@ public final class AwsCredentialsProviderUtils {
     public AwsCredentialsProvider resolveCredentialsProvider(final AwsCredentialsProviderConfiguration configuration) {
         if (StringUtils.isNotEmpty(configuration.getAccessKeyId())
                 && StringUtils.isNotEmpty(configuration.getSecretAccessKey())) {
-            return SystemPropertyCredentialsProvider.create();
+            AwsCredentials credentials = AwsBasicCredentials.create(configuration.getAccessKeyId(), configuration.getSecretAccessKey());
+            return StaticCredentialsProvider.create(credentials);
         } else {
             return DefaultCredentialsProvider.builder().build();
         }
