@@ -38,7 +38,8 @@ public final class AwsCredentialsProviderUtils {
     public AwsCredentialsProvider resolveCredentialsProvider(final AwsCredentialsProviderConfiguration configuration) {
         if (StringUtils.isNotEmpty(configuration.getAccessKeyId())
                 && StringUtils.isNotEmpty(configuration.getSecretAccessKey())) {
-            AwsCredentials credentials = AwsBasicCredentials.create(configuration.getAccessKeyId(), configuration.getSecretAccessKey());
+            AwsCredentials credentials = AwsBasicCredentials.create(configuration.getAccessKeyId(),
+                    configuration.getSecretAccessKey());
             return StaticCredentialsProvider.create(credentials);
         } else {
             return DefaultCredentialsProvider.builder().build();
