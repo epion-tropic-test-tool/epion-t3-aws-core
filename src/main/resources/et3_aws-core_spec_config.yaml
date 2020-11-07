@@ -9,6 +9,7 @@ languages:
 #####################################
 info:
   name: aws-core
+  labelName: AWS Core
   customPackage: com.epion_t3.aws.core
   summary:
     - lang: ja_JP
@@ -28,14 +29,22 @@ configurations:
       - lang: ja_JP
         contents: "AWSへの接続を行う資格情報の設定です。"
     description:
-      - lang: ja_JP
-        contents: "AWSへの接続を行う資格情報の設定です。"
-      - lang: ja_JP
-        contents: "アクセスキーIDとシークレットアクセスキーを省略した場合には、環境変数やインスタンス及びコンテナにアタッチされたロールでの解決を試みます。"
-      - lang: ja_JP
-        contents: "詳細は、[AWSのJavaSDKのJavaDoc](https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/auth/credentials/DefaultCredentialsProvider.html)を参照してください。"
-      - lang: ja_JP
-        contents: "公開範囲の広いリポジトリで管理する場合は、資格のキーとなる情報を記載しないでください。"
+      - order: 1
+        summary:
+          - lang: ja_JP
+            contents: "AWSへの接続を行う資格情報の設定です。"
+      - order: 2
+        summary:
+          - lang: ja_JP
+            contents: "アクセスキーIDとシークレットアクセスキーを省略した場合には、環境変数やインスタンス及びコンテナにアタッチされたロールでの解決を試みます。"
+      - order: 3
+        summary:
+          - lang: ja_JP
+            contents: "詳細は、[AWSのJavaSDKのJavaDoc](https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/auth/credentials/DefaultCredentialsProvider.html) を参照してください。"
+      - order: 4
+        summary:
+          - lang: ja_JP
+            contents: "公開範囲の広いリポジトリで管理する場合は、資格のキーとなる情報を記載しないでください。"
     structure:
       - order: 1
         name: configuration
