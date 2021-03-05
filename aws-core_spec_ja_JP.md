@@ -45,7 +45,31 @@ AWS系機能をコア部の機能を提供します。
 
 |Name|Summary|
 |:---|:---|
+|[AwsSdkHttpClientConfiguration](#AwsSdkHttpClientConfiguration)|AWSへの接続を行うHTTPクライアントの設定です。  |
 |[AwsCredentialsProviderConfiguration](#AwsCredentialsProviderConfiguration)|AWSへの接続を行う資格情報の設定です。  |
+
+------
+
+### AwsSdkHttpClientConfiguration
+AWSへの接続を行うHTTPクライアントの設定です。
+#### Description
+- AWSへの接続を行うHTTPクライアントの設定です。
+- プロキシ環境下での実行の場合に、プロキシを設定します。
+
+#### Structure
+```yaml
+commands : 
+  configuration : 「AwsSdkHttpClientConfiguration」固定
+  id : 設定のID
+  summary : 設定の概要（任意）
+  description : 設定の詳細（任意）
+  proxyEndpoint : プロキシのエンドポイントを指定します。例）http://host:port
+  username : プロキシに認証が存在する場合に、ユーザー名を指定します。
+  username : プロキシに認証が存在する場合に、パスワードを指定します。
+  connectTimeout : 接続タイムアウトをミリ秒（ms）で指定します。
+  socketTimeout : 読み込みタイムアウトをミリ秒（ms）で指定します。
+
+```
 
 ------
 

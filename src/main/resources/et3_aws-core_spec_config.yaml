@@ -22,7 +22,7 @@ info:
 #####################################
 configurations:
   ####################################
-  # SnowflakeConnectionConfiguration
+  # AwsCredentialsProviderConfiguration
   ####################################
   - id: AwsCredentialsProviderConfiguration
     summary:
@@ -88,6 +88,86 @@ configurations:
         summary:
           - lang: ja_JP
             contents: "シークレットアクセスキーを指定します。"
+  ####################################
+  # AwsSdkHttpClientConfiguration
+  ####################################
+  - id: AwsSdkHttpClientConfiguration
+    summary:
+      - lang: ja_JP
+        contents: "AWSへの接続を行うHTTPクライアントの設定です。"
+    description:
+      - order: 1
+        summary:
+          - lang: ja_JP
+            contents: "AWSへの接続を行うHTTPクライアントの設定です。"
+      - order: 2
+        summary:
+          - lang: ja_JP
+            contents: "プロキシ環境下での実行の場合に、プロキシを設定します。"
+    structure:
+      - order: 1
+        name: configuration
+        required: true
+        type: string
+        summary:
+          - lang: ja_JP
+            contents: "「AwsSdkHttpClientConfiguration」固定"
+      - order: 2
+        name: id
+        required: true
+        type: string
+        summary:
+          - lang: ja_JP
+            contents: 設定のID
+      - order: 3
+        name: summary
+        required: false
+        type: string
+        summary:
+          - lang: ja_JP
+            contents: 設定の概要（任意）
+      - order: 4
+        name: description
+        required: false
+        type: string
+        summary:
+          - lang: ja_JP
+            contents: 設定の詳細（任意）
+      - order: 5
+        name: proxyEndpoint
+        required: false
+        type: string
+        summary:
+          - lang: ja_JP
+            contents: "プロキシのエンドポイントを指定します。例）http://host:port"
+      - order: 6
+        name: username
+        required: false
+        type: string
+        summary:
+          - lang: ja_JP
+            contents: "プロキシに認証が存在する場合に、ユーザー名を指定します。"
+      - order: 7
+        name: username
+        required: false
+        type: string
+        summary:
+          - lang: ja_JP
+            contents: "プロキシに認証が存在する場合に、パスワードを指定します。"
+      - order: 8
+        name: connectTimeout
+        required: false
+        type: number
+        summary:
+          - lang: ja_JP
+            contents: "接続タイムアウトをミリ秒（ms）で指定します。"
+      - order: 9
+        name: socketTimeout
+        required: false
+        type: number
+        summary:
+          - lang: ja_JP
+            contents: "読み込みタイムアウトをミリ秒（ms）で指定します。"
 #####################################
 # コマンド定義
 #####################################
