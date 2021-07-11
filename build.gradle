@@ -50,11 +50,13 @@ dependencies {
     api "com.epion-t3:epion-t3-core:0.1.0"
 
     // AWS BOM
-    api platform('software.amazon.awssdk:bom:2.14.11')
+    api platform('software.amazon.awssdk:bom:2.16.99')
 
     // SDK core
     api 'software.amazon.awssdk:sdk-core'
     api 'software.amazon.awssdk:auth'
+    api 'software.amazon.awssdk:apache-client'
+
 
     // For Develop
     compileOnly 'org.projectlombok:lombok:1.18.6'
